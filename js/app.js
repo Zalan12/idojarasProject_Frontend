@@ -1,6 +1,7 @@
 const author="Farkas Zalán";
 const company="Bajai SZC Türr István Technikum"
 const appTitle="Időjárás app"
+const serverURL="http://localhost:3000"
 
 let title=document.querySelector('#title');
 let Author=document.querySelector('#author');
