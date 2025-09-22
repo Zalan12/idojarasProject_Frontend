@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Időjárás app</title>
+</head>
+<body>
+    <header>
+        <h1 id="title"></h1>
+        <span id="themeSwitch">
+            <i class="bi bi-moon" id="darkModeBTN"></i>
+            <i class="bi bi-sun" id="lightModeBTN"></i>
+        </span>
+    </header>
+            <!--Navigáció-->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Menü</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav" id="mainMenu">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" onclick="render('login')">Bejelentkezés</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="render('registration')">Regisztráció</a>
+                      </li>
+                      
+                    </ul>
+                    <ul class="navbar-nav" id="userMenu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kijelentkezés</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link userMenu" href="#">Időjárás adatok</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link userMenu" href="#">Statisztika</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link userMenu" href="#">Profilkezelés</a>
+                          </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+    <main>
+        <!--Az adott megjelenő nézet pl- login, reg...-->
+    </main>
+    <footer>
+        <p id="author"></p>
+        <p id="company"></p>
+        <p>2025</p>
+    </footer>
+    <script src="./js/app.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
