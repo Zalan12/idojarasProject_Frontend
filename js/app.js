@@ -67,13 +67,24 @@ function loadTheme()
 async function render(view)
 {
     main.innerHTML=await((await fetch(`views/${view}.html`)).text())
+
+    switch(view){
+        case 'profile':
+            {
+                await getProfile();
+                break;
+            }
+    }
 }
 
 
 async function getLoggedUser() {
     if(sessionStorage.getItem('loggedUser'))
     {
-
+        loggedUser=JSON.parse(sessionStorage.getItem('loggedUser'));
+        mainMenu.classList.add('d-none');
+        userMenu.classList.remove('d-none');
+        await render('main')
     }
      else
      {
@@ -85,4 +96,5 @@ async function getLoggedUser() {
     
 }
 loadTheme()
+setThemeBTN()
 getLoggedUser()

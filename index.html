@@ -16,6 +16,7 @@
             <i class="bi bi-sun" id="lightModeBTN"></i>
         </span>
     </header>
+    <div class="container col-12 col-lg-6 offset-lg-3">
             <!--Navigáció-->
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
@@ -35,16 +36,16 @@
                     </ul>
                     <ul class="navbar-nav" id="userMenu">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kijelentkezés</a>
+                            <a class="nav-link" href="#" onclick="logout()">Kijelentkezés</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link userMenu" href="#">Időjárás adatok</a>
+                            <a class="nav-link userMenu" href="#" onclick="render('main')">Időjárás adatok</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link userMenu" href="#">Statisztika</a>
+                            <a class="nav-link userMenu" href="#" onclick="render('statistics')">Statisztika</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link userMenu" href="#">Profilkezelés</a>
+                            <a class="nav-link userMenu" href="#" onclick="render('profile')">Profilkezelés</a>
                           </li>
                     </ul>
                   </div>
@@ -53,6 +54,7 @@
     <main>
         <!--Az adott megjelenő nézet pl- login, reg...-->
     </main>
+  </div>
     <footer>
         <p id="author"></p>
         <p id="company"></p>
