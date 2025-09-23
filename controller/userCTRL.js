@@ -191,4 +191,55 @@ async function updateProfile() {
 async function updatePassword() {
     let passwordField=document.querySelector('#passwordField');
     let newPasswordField=document.querySelector('#newPasswordField');
+    let confNewPasswordField=document.querySelector('#confNewPasswordField')
+
+    if(passwordField.value=="" || newPasswordField.value=="" ||confNewPasswordField.value=="")
+        {
+            showMessage('danger','Hiba','Nem adtál meg minden adatot!')
+            return;
+        }
+    if(passwordField.value!=loggedUser.password)
+        {
+            showMessage('danger','Hiba','Nem érvényes jelenlegi jelszó!')
+            return;
+        }
+    if(newPasswordField.value!=confNewPasswordField.value)
+        {
+            showMessage('danger','Hiba','Az új jelszó megerősítése nem sikerült!')
+            return;
+        }
+    if(!passRegExp.test(newPasswordField.value))
+        {
+            showMessage('danger','Hiba','Az új jelszó nem elég biztonságos!')
+            return;
+        }
+
+        try{
+            const loggedUser=JSON.parse(sessionStorage.getItem('loggedUser'))
+            const res =await fetch(`${serverURL}/users/jelszovalt/${loggedUser.id}`,{
+                method:'PATCH',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({
+                    password:newPasswordField.value,
+                    newPassword:newPasswordField.value
+                })
+            })
+            if(!res.ok){
+                const data=await res.json();
+                console.log(data.msg)
+                showMessage('danger','Hiba',`${data.msg}`)
+                return;
+            }
+            const updatedUsr=await res.json();
+           
+            showMessage('success','Siker','Sikeres felhasználó módosítás')
+    
+            sessionStorage.setItem('loggedUser',JSON.stringify({id:loggedUser.id,name:loggedUser.name,email:loggedUser.email,password:newPasswordField.value}))
+            
+        }
+    catch(err){
+        console.log("Hiba: ",err)
+    }
 }
