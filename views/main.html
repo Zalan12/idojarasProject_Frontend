@@ -1,2 +1,52 @@
+<div class="col-12 col-lg-6 offset-lg-3">
 <h3>Időjárás adatok</h3>
 <hr>
+<div id="messageBox"></div>
+
+<!--Űrlap-->
+<a class="btn btn-info mb-3 col-12 col-lg-12" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Adatfelvétel
+  </a>
+<div class="collapse" id="collapseExample">
+    <div class="form-floating mb-3 col-12">
+        <input type="date" class="form-control" id="dateField" placeholder="">
+        <label for="dateField">Dátum</label>
+    </div>
+    <div class="form-floating mb-3 col-12">
+        <input type="number" class="form-control" id="minTempField" placeholder="">
+        <label for="minTempField">Minimum hőmérséklet</label>
+    </div>
+    <div class="form-floating mb-3 col-12">
+        <input type="number" class="form-control" id="maxTempField" placeholder="">
+        <label for="maxTempField">Maximum hőmérséklet</label>
+    </div>
+    <div class="form-floating mb-3 col-12">
+        <select class="form-select" aria-label="Default select example" id="weatherTypeField">
+            <option value="Napos">Napos</option>
+            <option value="Felhős">Felhős</option>
+            <option value="Esős">Esős</option>
+            <option value="Szeles">Szeles</option>
+            <option value="Viharos">Viharos</option>
+          </select>
+          <label for="weatherTypeField">Időjárás típusa</label>
+          <button type="button" class="btn btn-primary mt-3" id="felvBtn" onclick="idoAdatFelvetel()">Felvétel</button>
+    </div>
+
+    <!--Táblázat-->
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-end">#</th>
+            <th class="text-end">Dátum</th>
+            <th class="text-end">Min. hőmérséklet</th>
+            <th class="text-end">Max. hőmérséklet</th>
+            <th class="text-end">Időjárás típusa</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+        <td colspan="5" class="text-center">Összesen: <span id="osszLepes" class="text-info .bold"></span></td>
+    </tfoot>
+</table>
+</div>

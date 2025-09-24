@@ -74,6 +74,10 @@ async function render(view)
                 await getProfile();
                 break;
             }
+        case 'main':
+            {
+                setDate()
+            }
     }
 }
 
