@@ -28,7 +28,30 @@ async function idoAdatFelvetel() {
         return;
     }
     try{
+        const res=await fetch(`${serverURL}/weather`,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                uid:loggedUser.id,
+                datum:datum.value,
+                minTemp:Number(minTemp.value),
+                maxTemp:Number(maxTemp.value),
+                weatherType:weatherType.value
+            })
+        })
 
+        const data=await res.json();
+
+        if(res.status==200)
+        {
+            datum.value="";
+            minTemp.value="";
+            maxTemp.value="";
+            showMessage('success','Siker','Sikeres adatfelvétel')
+            
+        }
     }
     catch(err)
     {
