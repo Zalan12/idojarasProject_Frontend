@@ -11,6 +11,7 @@
     Törlés
   </button>
 <div class="collapse" id="collapseExample">
+    <h3>Adatfelvétel</h3>
     <div class="form-floating mb-3 col-12">
         <input type="date" class="form-control" id="dateField" placeholder="">
         <label for="dateField">Dátum</label>
@@ -35,8 +36,38 @@
           <button type="button" class="btn btn-primary mt-3" id="felvBtn" onclick="idoAdatFelvetel()">Felvétel</button>
     </div>
 
-    <!--Táblázat-->
+    
 </div>
+<div class="collapse" id="collapseExample2">
+    <h3>Módosítás</h3>
+    <hr>
+    <div class="form-floating mb-3 col-12">
+        <input type="date" class="form-control" id="dateField2" placeholder="">
+        <label for="dateField2">Dátum</label>
+    </div>
+    <div class="form-floating mb-3 col-12">
+        <input type="number" class="form-control" id="minTempField2" placeholder="">
+        <label for="minTempField2">Minimum hőmérséklet</label>
+    </div>
+    <div class="form-floating mb-3 col-12">
+        <input type="number" class="form-control" id="maxTempField2" placeholder="">
+        <label for="maxTempField2">Maximum hőmérséklet</label>
+    </div>
+    <div class="form-floating mb-3 col-12">
+        <select class="form-select" aria-label="Default select example" id="weatherTypeField2">
+            <option value="Napos">Napos</option>
+            <option value="Felhős">Felhős</option>
+            <option value="Esős">Esős</option>
+            <option value="Szeles">Szeles</option>
+            <option value="Viharos">Viharos</option>
+          </select>
+          <label for="weatherTypeField2">Időjárás típusa</label>
+          <button type="button" class="btn btn-warning mt-3" id="modBtn" onclick="Modosit()">Módosítás</button>
+    </div>
+
+    
+</div>
+<!--Táblázat-->
 <table class="table">
     <thead>
         <tr>
@@ -46,6 +77,7 @@
             <th class="text-end">Max. hőmérséklet</th>
             <th class="text-end">Időjárás típusa</th>
             <th class="text-end">Törlés</th>
+            <th class="text-end">Módosítás</th>
         </tr>
     </thead>
     <tbody id="adatTabla">
