@@ -7,6 +7,9 @@
 <a class="btn btn-info mb-3 col-12 col-lg-12" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Adatfelvétel
   </a>
+  <button class="btn btn-danger mb-3 col-12 col-lg-12" onclick="delAll()">
+    Törlés
+  </button>
 <div class="collapse" id="collapseExample">
     <div class="form-floating mb-3 col-12">
         <input type="date" class="form-control" id="dateField" placeholder="">
@@ -42,11 +45,12 @@
             <th class="text-end">Min. hőmérséklet</th>
             <th class="text-end">Max. hőmérséklet</th>
             <th class="text-end">Időjárás típusa</th>
+            <th class="text-end">Törlés</th>
         </tr>
     </thead>
-    <tbody></tbody>
-    <tfoot>
-        <td colspan="5" class="text-center">Összesen: <span id="osszLepes" class="text-info .bold"></span></td>
-    </tfoot>
+    <tbody id="adatTabla">
+
+    </tbody>
+
 </table>
 </div>
