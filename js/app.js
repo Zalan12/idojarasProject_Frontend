@@ -77,7 +77,14 @@ async function render(view)
         case 'main':
             {
                 setDate()
-               await loadData()
+              await loadData()
+               
+            }
+        case 'calendar':
+            {
+                await getCalendarData();
+                initCalendar();
+                break;
             }
     }
 }
@@ -89,7 +96,9 @@ async function getLoggedUser() {
         loggedUser=JSON.parse(sessionStorage.getItem('loggedUser'));
         mainMenu.classList.add('d-none');
         userMenu.classList.remove('d-none');
-        await render('main')
+        await setTimeout(() => {
+            render('main')
+        }, 100); 
     }
      else
      {

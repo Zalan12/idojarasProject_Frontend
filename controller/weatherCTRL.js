@@ -1,7 +1,8 @@
+let today=new Date().toISOString().split('T')[0];
 let adat=[];
 let adatID=0;
 function setDate(){
-    let today=new Date().toISOString().split('T')[0];
+    
     let datum=document.querySelector('#dateField');
     datum.setAttribute('min',today)
 }
@@ -17,6 +18,7 @@ async function idoAdatFelvetel() {
         showMessage('danger','Hiba','Üres érékekkel nem tudsz adatot rögzíteni');
         return;
     }
+
     if(minTemp.value<=-100|| maxTemp.value>60)
         {
             showMessage('danger','Hiba','Valótlan hőmérsékleti adatok');
@@ -163,6 +165,7 @@ async function delAll() {
     
             });
             let data=await res.json();
+            console.log(res.status)
             if(res.status==200)
                 {
                     showMessage('success','OK','Sikeres törlés')
