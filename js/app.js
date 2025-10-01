@@ -26,12 +26,14 @@ lightModeBTN.addEventListener('click', ()=>{
     setTheme('light');
     saveTheme('light');
     setThemeBTN('light');
+    
 })
 darkModeBTN.addEventListener('click', ()=>{
 
     setTheme('dark');
     saveTheme('dark');
     setThemeBTN('dark');
+    
 })
 
 function setTheme(theme)
@@ -85,6 +87,11 @@ async function render(view)
                 await getCalendarData();
                 initCalendar();
                 break;
+            }
+
+        case 'statistics':
+            {
+               await chartOs()
             }
     }
 }

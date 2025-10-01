@@ -13,6 +13,7 @@ async function idoAdatFelvetel() {
     let maxTemp=document.querySelector('#maxTempField');
     let weatherType=document.querySelector('#weatherTypeField');
 
+
     if(datum.value=="" || minTemp.value==""|| maxTemp.value=="" || weatherType.option=="")
     {
         showMessage('danger','Hiba','Üres érékekkel nem tudsz adatot rögzíteni');
@@ -147,8 +148,9 @@ async function egyTorles()
         if(res.status==200)
             {
                 showMessage('success','OK','Sikeres törlés')
-                setTimeout(await render('main'),3000);
+                
             }
+            
     }
     catch(err){console.log("error: ",err)}
 }
